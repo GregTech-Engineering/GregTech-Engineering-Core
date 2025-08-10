@@ -21,7 +21,7 @@ runs:
       env:
         REF: ${{ inputs.ref || github.ref }}
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 17
 
     - name: Setup Gradle
