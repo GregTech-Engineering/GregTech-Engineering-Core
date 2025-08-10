@@ -1,11 +1,13 @@
 package org.gte.gtecore.config;
 
+import org.gte.gtecore.GTECore;
+
 import com.gregtechceu.gtceu.config.ConfigHolder;
+
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
-import org.gte.gtecore.GTECore;
 
 @Config(id = GTECore.MOD_ID)
 public class GTEConfig {

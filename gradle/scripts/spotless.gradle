@@ -1,6 +1,5 @@
 spotless {
     encoding 'UTF-8'
-    ratchetFrom 'origin/main'
 
     format 'misc', {
         target '.gitignore'
