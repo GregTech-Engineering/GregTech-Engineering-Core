@@ -9,6 +9,7 @@ plugins {
     alias libs.plugins.lombok
 }
 
+group = maven_group
 boolean isSnapshot = System.getenv("SNAPSHOT")
 version = "${mod_version}" + (isSnapshot ? "-SNAPSHOT" : "")
 boolean isCI = System.getenv("CI") != null
