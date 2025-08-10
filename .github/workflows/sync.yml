@@ -18,5 +18,6 @@ jobs:
           git switch -C gh/workflow-sync
           git fetch origin
           git checkout origin/main -- .github
+          git add .github
           git commit -am "Sync Workflows"
           git push --force --set-upstream origin gh/workflow-sync
