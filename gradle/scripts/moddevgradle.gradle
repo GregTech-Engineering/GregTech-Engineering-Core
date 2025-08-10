@@ -62,6 +62,16 @@ legacyForge {
             systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
         }
 
+        gameTestServer {
+            type = "gameTestServer"
+            sourceSet = sourceSets.test
+            ideName = "Game Tests"
+
+            gameDirectory.set(file('run/gametest'))
+            systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
+            environment('TEST', 'true')
+        }
+
         data {
             data()
             sourceSet = sourceSets.main
