@@ -5,6 +5,9 @@ on:
     branches: ['main']
     paths: ['.github/**']
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -19,5 +22,5 @@ jobs:
           git fetch origin
           git checkout origin/main -- .github
           git add .github
-          git commit --allow-empty -m "Sync Workflows"
+          git commit -am "Sync Workflows"
           git push --force --set-upstream origin gh/workflow-sync
