@@ -49,7 +49,7 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts-1.20.1
+          name: build-artifacts-main
           path: build/libs/*
           if-no-files-found: error
           retention-days: 3
@@ -95,7 +95,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git switch -C gh/release-1.20.1
+          git switch -C gh/release-main
           BUMPED=$(echo ${{ needs.build.outputs.ver }} | awk -F. '/[0-9]+\./{$NF++;print}' OFS=.)
           sed -i "s/= ${{ needs.build.outputs.ver }}/= ${BUMPED}/" gradle.properties
           git commit -am "Bump version to ${BUMPED}"
@@ -108,5 +108,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git push --force --set-upstream origin gh/release-1.20.1
+          git push --force --set-upstream origin gh/release-main
           gh pr create -B main -H gh/release-main --title "RELEASE for main [no-snapshot]" --body "Created by GH Workflow" --label "ignore changelog"
