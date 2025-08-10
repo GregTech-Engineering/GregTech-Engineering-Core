@@ -1,10 +1,11 @@
 package org.gte.gtecore.mixin.ftbu;
 
-import dev.ftb.mods.ftbultimine.FTBUltiminePlayerData;
-import dev.ftb.mods.ftbultimine.shape.BlockMatcher;
 import org.gte.gtecore.config.GTEConfig;
 import org.gte.gtecore.utils.ItemUtils;
 import org.gte.gtecore.utils.StringUtils;
+
+import dev.ftb.mods.ftbultimine.FTBUltiminePlayerData;
+import dev.ftb.mods.ftbultimine.shape.BlockMatcher;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;

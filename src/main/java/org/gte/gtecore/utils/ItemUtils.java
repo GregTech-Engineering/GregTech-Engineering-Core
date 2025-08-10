@@ -1,11 +1,12 @@
 package org.gte.gtecore.utils;
 
+import org.gte.gtecore.api.item.IItem;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import org.gte.gtecore.api.item.IItem;
 
 public final class ItemUtils {
 

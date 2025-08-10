@@ -6,6 +6,5 @@ import java.util.function.Consumer;
 
 public interface $ClassifiedRecipe {
 
-    static void init(Consumer<FinishedRecipe> provider) {
-    }
+    static void init(Consumer<FinishedRecipe> provider) {}
 }
