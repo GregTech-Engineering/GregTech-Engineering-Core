@@ -36,11 +36,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 1.20.1
+          ref: main
       - name: Setup Build
         uses: ./.github/actions/build_setup
         with:
-          ref: 1.20.1
+          ref: main
       - name: Get Version
         id: ver
         run: echo "version=$(./gradlew -q printVersion)" >> $GITHUB_OUTPUT
@@ -70,7 +70,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: build-artifacts-1.20.1
+          name: build-artifacts-main
       - name: Upload artifacts to release
         uses: softprops/action-gh-release@v2
         with:
@@ -90,7 +90,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 1.20.1
+          ref: main
       - name: Bump Version
         run: |
           git config user.name 'github-actions[bot]'
@@ -109,4 +109,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           git push --force --set-upstream origin gh/release-1.20.1
-          gh pr create -B 1.20.1 -H gh/release-1.20.1 --title "RELEASE for 1.20.1 [no-snapshot]" --body "Created by GH Workflow" --label "ignore changelog"
+          gh pr create -B 1.20.1 -H gh/release-main --title "RELEASE for main [no-snapshot]" --body "Created by GH Workflow" --label "ignore changelog"

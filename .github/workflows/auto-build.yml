@@ -33,8 +33,6 @@ jobs:
       - name: Version Suffix
         id: suffix
         run: echo "VERSION_SUFFIX=$(echo "${{ github.sha }}" | cut -c 1-7)" >> $GITHUB_ENV
-      - name : Spotless
-        run: ./gradlew spotlessApply
       - name: Datagen
         run: ./gradlew rundata
       - name: Build
