@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: ./gradlew build
       - name: Publish to Maven
-        if: ${{ github.repository_owner == 'GregTech-Engineering' && env.PUBLISH == 'true' }}
+        if: ${{ github.repository_owner == 'GregTechEngineering' && env.PUBLISH == 'true' }}
         run: ./gradlew publish
       - name: Rename Jars
         if: ${{ env.PUBLISH == 'true' }}
@@ -71,6 +71,6 @@ jobs:
           prerelease: true
           body: |
             The latest build of GTE for Minecraft ${{ github.ref_name }}.
-            Please report any [issues](https://github.com/GregTech-Engineering/GregTech-Engineering-Core/issues).
+            Please report any [issues](https://github.com/GregTechEngineering/GregTech-Engineering-Core/issues).
             ${{ steps.changelog.outputs.changelog }}
           files: build/libs/*.jar
