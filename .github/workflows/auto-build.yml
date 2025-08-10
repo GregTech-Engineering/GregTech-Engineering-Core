@@ -35,6 +35,8 @@ jobs:
         run: echo "VERSION_SUFFIX=$(echo "${{ github.sha }}" | cut -c 1-7)" >> $GITHUB_ENV
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+      - name: spotlessApply
+        run: ./gradlew spotlessApply
       - name: Datagen
         run: ./gradlew rundata
       - name: Build
