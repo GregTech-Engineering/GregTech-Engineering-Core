@@ -109,4 +109,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           git push --force --set-upstream origin gh/release-1.20.1
-          gh pr create -B 1.20.1 -H gh/release-main --title "RELEASE for main [no-snapshot]" --body "Created by GH Workflow" --label "ignore changelog"
+          gh pr create -B main -H gh/release-main --title "RELEASE for main [no-snapshot]" --body "Created by GH Workflow" --label "ignore changelog"
