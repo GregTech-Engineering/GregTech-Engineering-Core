@@ -14,7 +14,7 @@ credits = ""
 [[dependencies.${mod_id}]]
 modId = "gtceu"
 mandatory = false
-versionRange = "[1,)"
+versionRange = "[7,)"
 ordering = "BEFORE"
 side = "BOTH"
 
