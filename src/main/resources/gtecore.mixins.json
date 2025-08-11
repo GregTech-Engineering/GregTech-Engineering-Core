@@ -9,6 +9,7 @@
     "ae2.gui.PatternProviderScreenMixin",
     "ae2.gui.ProcessingEncodingPanelMixin",
     "ae2.gui.SettingToggleButtonMixin",
+    "emi.RecipeScreenMixin",
     "mc.MinecraftMixin"
   ],
   "mixins": [
