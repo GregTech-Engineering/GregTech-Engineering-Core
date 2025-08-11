@@ -31,7 +31,7 @@ jobs:
           failOnError: true
 
   publish-20:
-    name: main
+    name: 1.20.1
     needs: [ meta ]
     if: ${{ contains(github.ref_name, 'main') }}
     secrets: inherit

@@ -36,11 +36,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ inputs.branch }}
       - name: Setup Build
         uses: ./.github/actions/build_setup
         with:
-          ref: main
+          ref: ${{ inputs.branch }}
       - name: Get Version
         id: ver
         run: echo "version=$(./gradlew -q printVersion)" >> $GITHUB_OUTPUT
@@ -51,7 +51,7 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts-main
+          name: build-artifacts-${{ inputs.branch }}
           path: build/libs/*
           if-no-files-found: error
           retention-days: 3
@@ -72,7 +72,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: build-artifacts-main
+          name: build-artifacts-${{ inputs.branch }}
       - name: Upload artifacts to release
         uses: softprops/action-gh-release@v2
         with:
@@ -92,12 +92,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ inputs.branch }}
       - name: Bump Version
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git switch -C gh/release-main
+          git switch -C gh/release-${{ inputs.branch }}
           BUMPED=$(echo ${{ needs.build.outputs.ver }} | awk -F. '/[0-9]+\./{$NF++;print}' OFS=.)
           sed -i "s/= ${{ needs.build.outputs.ver }}/= ${BUMPED}/" gradle.properties
           git commit -am "Bump version to ${BUMPED}"
@@ -110,5 +110,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git push --force --set-upstream origin gh/release-main
-          gh pr create -B main -H gh/release-main --title "RELEASE for main [no-snapshot]" --body "Created by GH Workflow" --label "ignore changelog"
+          git push --force --set-upstream origin gh/release-${{ inputs.branch }}
+          gh pr create -B ${{ inputs.branch }} -H gh/release-${{ inputs.branch }} --title "RELEASE for ${{ inputs.branch }} [no-snapshot]" --body "Created by GH Workflow" --label "ignore changelog"
