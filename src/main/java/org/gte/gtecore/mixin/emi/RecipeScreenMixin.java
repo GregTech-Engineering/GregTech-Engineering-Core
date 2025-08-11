@@ -1,5 +1,10 @@
 package org.gte.gtecore.mixin.emi;
 
+import org.gte.gtecore.integration.emi.multipage.CustomModularEmiRecipe;
+
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
+
 import dev.emi.emi.api.EmiApi;
 import dev.emi.emi.api.widget.Bounds;
 import dev.emi.emi.api.widget.Widget;
@@ -8,9 +13,6 @@ import dev.emi.emi.config.SidebarSide;
 import dev.emi.emi.screen.RecipeScreen;
 import dev.emi.emi.screen.RecipeTab;
 import dev.emi.emi.screen.WidgetGroup;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
-import org.gte.gtecore.integration.emi.multipage.CustomModularEmiRecipe;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
