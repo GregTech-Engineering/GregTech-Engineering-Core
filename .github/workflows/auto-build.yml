@@ -61,7 +61,7 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v5
         with:
           configuration: "./.github/json/config-latest.json"
-          toTag: ${{ github.ref }}
+          toTag: main
           fetchViaCommits: true
           failOnError: false
       - name: Release Latest
