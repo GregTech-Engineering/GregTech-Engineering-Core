@@ -22,7 +22,9 @@ base {
 }
 
 afterEvaluate {
+    reobfJar.archiveClassifier = ""
     tasks.withType(org.gradle.jvm.tasks.Jar).configureEach {
+        destinationDirectory = file('build/libs/')
         manifest.attributes([
                 'MixinConfigs': "gtecore.mixins.json",
                 'Specification-Title': project.name,
