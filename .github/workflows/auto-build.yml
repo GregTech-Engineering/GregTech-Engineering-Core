@@ -17,7 +17,7 @@ jobs:
       PUBLISH: ${{ !contains(github.event.commits[0].message, '[no-snapshot]') }}
       MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
       MAVEN_USER: ${{ secrets.MAVEN_USER }}
-      SNAPSHOT: true
+      SNAPSHOT: false
       CI: true
     permissions:
       contents: write
