@@ -70,7 +70,7 @@ jobs:
         with:
           tag_name: latest-${{ github.ref_name }}
           name: 'GTECore-${{ steps.ver.outputs.version}} SNAPSHOT ${{ env.VERSION_SUFFIX }}'
-          prerelease: true
+          prerelease: false
           body: |
             The latest build of GTECore for GregTech Engineering.
             Please report any [issues](https://github.com/GregTech-Engineering/GregTech-Engineering-Core/issues).
