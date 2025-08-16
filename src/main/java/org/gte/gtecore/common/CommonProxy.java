@@ -35,8 +35,8 @@ import static org.gte.gtecore.api.registries.GTERegistration.REGISTRATE;
 public class CommonProxy {
 
     public CommonProxy() {
-        init();
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        init();
         REGISTRATE.registerEventListeners(eventBus);
         // GTEFluids.FLUID_TYPE.register(eventBus);
         // GTEFluids.FLUID.register(eventBus);
@@ -75,6 +75,12 @@ public class CommonProxy {
         // AdAstraEvents.AcidRainTickEvent.register(IEnhancedPlayer::spaceTick);
         // AdAstraEvents.TemperatureTickEvent.register(IEnhancedPlayer::spaceTick);
         // AdAstraEvents.EntityGravityEvent.register(IEnhancedPlayer::gravity);
+        //
+        // AdvancedTerminalBehavior.AutoBuildSetting.HATCH_NAMES.add("thread_hatch");
+        // AdvancedTerminalBehavior.AutoBuildSetting.HATCH_NAMES.add("accelerate_hatch");
+        // AdvancedTerminalBehavior.AutoBuildSetting.HATCH_NAMES.add("programmablec_hatch");
+        // AdvancedTerminalBehavior.AutoBuildSetting.HATCH_NAMES.add("gravity_hatch");
+        // AdvancedTerminalBehavior.AutoBuildSetting.HATCH_NAMES.add("vacuum_hatch");
         //
         // if (GTCEu.isProd() && GTCEu.Mods.isEMILoaded()) EMIRecipeModHelper.setRecipeModHelper();
 

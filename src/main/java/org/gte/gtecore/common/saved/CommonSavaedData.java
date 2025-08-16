@@ -15,11 +15,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import static net.minecraft.resources.ResourceLocation.tryParse;
 import static org.gte.gtecore.api.GTEValues.*;
-import static org.gte.gtecore.api.GTEValues.PLANET_LIST;
-import static org.gte.gtecore.api.GTEValues.PLANET_NAME;
-import static org.gte.gtecore.api.GTEValues.PLAYER_LIST;
-import static org.gte.gtecore.api.GTEValues.PLAYER_UUID;
 
 public final class CommonSavaedData extends SavedData {
 
@@ -53,7 +50,7 @@ public final class CommonSavaedData extends SavedData {
             Set<ResourceLocation> set = new ObjectOpenHashSet<>();
             ListTag planetsList = playerTag.getList(PLANET_LIST, 10);
             for (Tag planetTag : planetsList) {
-                set.add(new ResourceLocation(((CompoundTag) planetTag).getString(PLANET_NAME)));
+                set.add(tryParse(((CompoundTag) planetTag).getString(PLANET_NAME)));
             }
             planetUnlocked.put(playerTag.getUUID(PLAYER_UUID), set);
         }
