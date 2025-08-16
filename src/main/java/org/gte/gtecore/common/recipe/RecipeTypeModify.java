@@ -6,8 +6,6 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 
 import net.minecraft.world.level.material.Fluid;
 
-import static org.gte.gtecore.common.data.GTERecipeTypes.*;
-
 public final class RecipeTypeModify {
 
     private RecipeTypeModify() {}
