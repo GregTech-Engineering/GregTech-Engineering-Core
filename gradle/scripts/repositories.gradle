@@ -10,9 +10,6 @@ repositories {
     maven {
         url "https://maven.quiltmc.org/repository/release/"
     }
-    maven {
-        url "https://maven.parchmentmc.org"
-    }
     maven { // JEI
         name "Jared's Maven"
         url "https://maven.blamejared.com/"
