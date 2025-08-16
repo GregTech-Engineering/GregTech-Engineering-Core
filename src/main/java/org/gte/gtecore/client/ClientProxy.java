@@ -24,7 +24,9 @@ public final class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.register(ForgeClientEvent.class);
     }
 
-    private static void init() {}
+    private static void init() {
+        CraftingUnitModelProvider.initCraftingUnitModels();
+    }
 
     @SuppressWarnings("all")
     private static void clientSetup(FMLClientSetupEvent event) {
