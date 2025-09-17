@@ -51,7 +51,12 @@ public final class BlockRegisterUtils {
                     String unformed = "block/crafting/" + ctx.getName();
                     provider.models().cubeAll(unformed, provider.modLoc("block/crafting/" + ctx.getName()));
                     provider.models().getBuilder(formed);
-                    provider.getVariantBuilder(ctx.get()).forAllStatesExcept(state -> ConfiguredModel.builder().modelFile(provider.models().getExistingFile(provider.modLoc(state.getValue(AbstractCraftingUnitBlock.FORMED) ? formed : unformed))).build(), AbstractCraftingUnitBlock.POWERED);
+                    provider.getVariantBuilder(ctx.get())
+                            .forAllStatesExcept(state -> ConfiguredModel.builder()
+                                    .modelFile(provider.models()
+                                            .getExistingFile(provider.modLoc(state.getValue(AbstractCraftingUnitBlock.FORMED) ? formed : unformed)))
+                                    .build(),
+                                    AbstractCraftingUnitBlock.POWERED);
                 })
                 .item(BlockItem::new)
                 .model((ctx, provider) -> provider.withExistingParent(ctx.getName(), provider.modLoc("block/crafting/" + ctx.getName())))

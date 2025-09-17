@@ -14,14 +14,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Supplier;
 
-import static net.minecraft.resources.ResourceLocation.tryParse;
-
 public class RegistriesUtils {
 
     private RegistriesUtils() {}
 
     public static Item getItem(String s) {
-        return getItem(tryParse(s));
+        return getItem(new ResourceLocation(s));
     }
 
     public static Item getItem(String mod, String name) {
@@ -58,6 +56,6 @@ public class RegistriesUtils {
     }
 
     public static Block getBlock(String s) {
-        return ForgeRegistries.BLOCKS.getValue(tryParse(s));
+        return ForgeRegistries.BLOCKS.getValue(new ResourceLocation(s));
     }
 }

@@ -7,15 +7,14 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 
-public final class GTERegistration extends GTRegistrate {
+public final class GTERegistration {
 
-    public static final GTERegistration REGISTRATE = new GTERegistration();
+    public static final GTRegistrate REGISTRATE = GTRegistrate.create(GTECore.MOD_ID);
 
     static {
         REGISTRATE.defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
     }
 
     private GTERegistration() {
-        super(GTECore.MOD_ID);
     }
 }

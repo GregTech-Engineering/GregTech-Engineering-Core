@@ -84,8 +84,4 @@ public class GTEConfig {
     @Configurable
     @Configurable.Comment("Dev Mode")
     public boolean dev;
-
-    @Configurable
-    @Configurable.Comment("When disabled, the emi favorites in different saves will be independent from each other")
-    public boolean emiGlobalFavorites = true;
 }

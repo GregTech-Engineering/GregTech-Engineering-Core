@@ -5,7 +5,6 @@ import org.gte.gtecore.common.data.GTELoots;
 import org.gte.gtecore.data.recipe.*;
 import org.gte.gtecore.data.recipe.classified.$ClassifiedRecipe;
 import org.gte.gtecore.data.recipe.generated.*;
-import org.gte.gtecore.data.recipe.generated.ComponentRecipes;
 import org.gte.gtecore.data.recipe.mod.ImmersiveAircraft;
 import org.gte.gtecore.data.recipe.processing.*;
 
@@ -18,11 +17,10 @@ import com.gregtechceu.gtceu.data.recipe.GTCraftingComponents;
 import com.gregtechceu.gtceu.data.recipe.MaterialInfoLoader;
 import com.gregtechceu.gtceu.data.recipe.configurable.RecipeAddition;
 import com.gregtechceu.gtceu.data.recipe.misc.*;
+import com.gregtechceu.gtceu.data.recipe.misc.ComponentRecipes;
 import com.gregtechceu.gtceu.data.recipe.serialized.chemistry.ChemistryRecipes;
 
 import net.minecraft.data.recipes.FinishedRecipe;
-
-import com.hepdd.gtmthings.data.GTMTRecipe;
 
 import java.util.function.Consumer;
 

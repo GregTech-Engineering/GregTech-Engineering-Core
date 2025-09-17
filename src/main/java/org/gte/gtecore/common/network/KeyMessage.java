@@ -1,11 +1,14 @@
 package org.gte.gtecore.common.network;
 
+import org.gte.gtecore.api.entity.IEnhancedPlayer;
+
 import com.gregtechceu.gtceu.api.item.IGTTool;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -63,7 +66,20 @@ interface KeyMessage {
         }
     }
 
-    private static void toggleNightVision(Player player) {}
+    private static void toggleNightVision(Player player) {
+        if (((IEnhancedPlayer) player).gTECore$canFly()) {
+            CompoundTag data = player.getPersistentData();
+            boolean nightVisionEnabled = data.getBoolean("night_vision");
+            data.putBoolean("night_vision", !nightVisionEnabled);
+
+            if (nightVisionEnabled) {
+                player.removeEffect(MobEffects.NIGHT_VISION);
+                player.displayClientMessage(Component.translatable("metaarmor.message.nightvision.disabled"), true);
+            } else {
+                player.displayClientMessage(Component.translatable("metaarmor.message.nightvision.enabled"), true);
+            }
+        }
+    }
 
     private static void upgradeToolSpeed(Player player) {
         ItemStack itemStack = player.getItemInHand(InteractionHand.MAIN_HAND);
@@ -88,5 +104,15 @@ interface KeyMessage {
         }
     }
 
-    private static void drift(ServerPlayer player) {}
+    private static void drift(ServerPlayer player) {
+        if (player instanceof IEnhancedPlayer enhancedPlayer) {
+            boolean disableDrift = !enhancedPlayer.gTECore$isDisableDrift();
+            enhancedPlayer.gtecore$setDrift(disableDrift);
+            if (disableDrift) {
+                player.displayClientMessage(Component.translatable("key.gtecore.drift").append(": ").append(Component.translatable("gtecore.machine.off")), true);
+            } else {
+                player.displayClientMessage(Component.translatable("key.gtecore.drift").append(": ").append(Component.translatable("gtecore.machine.on")), true);
+            }
+        }
+    }
 }

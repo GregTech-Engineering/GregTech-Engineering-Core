@@ -59,7 +59,12 @@ final class CraftingUnitModelProvider extends AbstractCraftingUnitModelProvider<
 
     @Override
     public BakedModel getBakedModel(Function<Material, TextureAtlasSprite> spriteGetter) {
-        return new LightBakedModel(spriteGetter.apply(RING_CORNER), spriteGetter.apply(RING_SIDE_HOR), spriteGetter.apply(RING_SIDE_VER), spriteGetter.apply(LIGHT_BASE), getLightMaterial(spriteGetter));
+        return new LightBakedModel(
+                spriteGetter.apply(RING_CORNER),
+                spriteGetter.apply(RING_SIDE_HOR),
+                spriteGetter.apply(RING_SIDE_VER),
+                spriteGetter.apply(LIGHT_BASE),
+                getLightMaterial(spriteGetter));
     }
 
     private static Material texture(String name) {
@@ -76,7 +81,9 @@ final class CraftingUnitModelProvider extends AbstractCraftingUnitModelProvider<
 
     static void initCraftingUnitModels() {
         for (CraftingUnitType type : CraftingUnitType.values()) {
-            BuiltInModelHooks.addBuiltInModel(GTECore.id("block/crafting/" + type.getAffix() + "_formed"), new CraftingCubeModel(new CraftingUnitModelProvider(type)));
+            BuiltInModelHooks.addBuiltInModel(
+                    GTECore.id("block/crafting/" + type.getAffix() + "_formed"),
+                    new CraftingCubeModel(new CraftingUnitModelProvider(type)));
         }
     }
 }

@@ -10,8 +10,6 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static net.minecraft.resources.ResourceLocation.tryBuild;
-
 @Mod(GTECore.MOD_ID)
 public class GTECore {
 
@@ -20,7 +18,7 @@ public class GTECore {
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     public static ResourceLocation id(String name) {
-        return tryBuild(MOD_ID, name);
+        return new ResourceLocation(MOD_ID, name);
     }
 
     public GTECore() {

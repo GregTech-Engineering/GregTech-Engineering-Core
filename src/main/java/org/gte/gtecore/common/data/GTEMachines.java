@@ -1,19 +1,26 @@
 package org.gte.gtecore.common.data;
 
+import org.gte.gtecore.common.data.machines.*;
+
+import static org.gte.gtecore.api.registries.GTERegistration.REGISTRATE;
+
 public interface GTEMachines {
+    static void register() {
+        REGISTRATE.creativeModeTab(() -> GTECreativeModeTabs.GTE_MACHINE);
+    }
 
     static void init() {
         // ManaMachine.init();
         // GeneratorMultiblock.init();
         // ExResearchMachines.init();
-        // MultiBlockA.init();
-        // MultiBlockB.init();
-        // MultiBlockC.init();
-        // MultiBlockD.init();
-        // MultiBlockE.init();
-        // MultiBlockF.init();
-        // MultiBlockG.init();
-        // MultiBlockH.init();
+        MultiBlockA.init();
+        MultiBlockB.init();
+        MultiBlockC.init();
+        MultiBlockD.init();
+        MultiBlockE.init();
+        MultiBlockF.init();
+        MultiBlockG.init();
+        MultiBlockH.init();
     }
 
     //////////////////////////////////////

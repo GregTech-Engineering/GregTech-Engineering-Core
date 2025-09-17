@@ -1,10 +1,7 @@
 package org.gte.gtecore.common.network;
 
-import org.gte.gtecore.GTECore;
 import org.gte.gtecore.api.misc.PlanetManagement;
 import org.gte.gtecore.client.ClientCache;
-import org.gte.gtecore.config.GTEConfig;
-import org.gte.gtecore.integration.emi.EmiPersist;
 import org.gte.gtecore.mixin.patchouli.BookContentResourceListenerLoaderAccessor;
 import org.gte.gtecore.utils.ServerUtils;
 
@@ -15,7 +12,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 
-import dev.emi.emi.runtime.EmiPersistentData;
 import org.jetbrains.annotations.Nullable;
 import vazkii.patchouli.client.book.BookContentResourceListenerLoader;
 import vazkii.patchouli.client.book.ClientBookRegistry;
@@ -66,12 +62,6 @@ public interface ServerMessage {
                     thread.start();
                 }
                 ClientCache.SERVER_IDENTIFIER = data.getUUID(ServerUtils.IDENTIFIER_KEY);
-                if (!GTEConfig.INSTANCE.emiGlobalFavorites && EmiPersist.needsRefresh) {
-                    // emi has loaded before we receive SERVER_IDENTIFIER, reload it.
-                    EmiPersistentData.load();
-                    GTECore.LOGGER.warn("emi reloaded");
-                    EmiPersist.needsRefresh = false;
-                }
                 break;
             }
         }

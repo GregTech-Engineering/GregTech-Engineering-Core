@@ -1,7 +1,9 @@
 package org.gte.gtecore.common;
 
 import org.gte.gtecore.GTECore;
+import org.gte.gtecore.api.entity.IEnhancedPlayer;
 import org.gte.gtecore.common.data.*;
+import org.gte.gtecore.common.forge.ForgeCommonEvent;
 import org.gte.gtecore.config.GTEConfig;
 import org.gte.gtecore.data.Data;
 import org.gte.gtecore.integration.ae2.InfinityCellGuiHandler;
@@ -14,11 +16,13 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.DimensionMarker;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
+import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.condition.RecipeConditionType;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 import com.gregtechceu.gtceu.common.unification.material.MaterialRegistryManager;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -27,6 +31,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import appeng.api.networking.pathing.ChannelMode;
 import appeng.api.storage.StorageCells;
 import appeng.core.AEConfig;
+import earth.terrarium.adastra.api.events.AdAstraEvents;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.core.config.Configurator;
 
@@ -46,7 +51,8 @@ public class CommonProxy {
         eventBus.addListener(CommonProxy::registerMaterialRegistry);
         eventBus.addGenericListener(RecipeConditionType.class, CommonProxy::registerRecipeConditions);
         eventBus.addGenericListener(DimensionMarker.class, CommonProxy::registerDimensionMarkers);
-        // MinecraftForge.EVENT_BUS.register(ForgeCommonEvent.class);
+        eventBus.addGenericListener(MachineDefinition.class, this::registerMachines);
+        MinecraftForge.EVENT_BUS.register(ForgeCommonEvent.class);
         // MinecraftForge.EVENT_BUS.register(FoodHurtAnimalEventHandler.class);
         // MinecraftForge.EVENT_BUS.register(ExperienceEventHandler.class);
     }
@@ -71,10 +77,10 @@ public class CommonProxy {
         FusionReactorMachine.registerFusionTier(GTValues.UHV, " (MKIV)");
         FusionReactorMachine.registerFusionTier(GTValues.UEV, " (MKV)");
 
-        // AdAstraEvents.OxygenTickEvent.register(IEnhancedPlayer::spaceTick);
-        // AdAstraEvents.AcidRainTickEvent.register(IEnhancedPlayer::spaceTick);
-        // AdAstraEvents.TemperatureTickEvent.register(IEnhancedPlayer::spaceTick);
-        // AdAstraEvents.EntityGravityEvent.register(IEnhancedPlayer::gravity);
+        AdAstraEvents.OxygenTickEvent.register(IEnhancedPlayer::spaceTick);
+        AdAstraEvents.AcidRainTickEvent.register(IEnhancedPlayer::spaceTick);
+        AdAstraEvents.TemperatureTickEvent.register(IEnhancedPlayer::spaceTick);
+        AdAstraEvents.EntityGravityEvent.register(IEnhancedPlayer::gravity);
         //
         // AdvancedTerminalBehavior.AutoBuildSetting.HATCH_NAMES.add("thread_hatch");
         // AdvancedTerminalBehavior.AutoBuildSetting.HATCH_NAMES.add("accelerate_hatch");
@@ -106,6 +112,13 @@ public class CommonProxy {
 
     private static void registerDimensionMarkers(GTCEuAPI.RegisterEvent<ResourceLocation, DimensionMarker> event) {
         // GTEDimensionMarkers.init();
+    }
+
+    private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
+//        BlockMap.init();
+//        GTMachineModify.init();
+//        GCYMMachines.init();
+        GTEMachines.init();
     }
 
     public static void afterStartup() {

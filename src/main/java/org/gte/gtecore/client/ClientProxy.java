@@ -26,6 +26,7 @@ public final class ClientProxy extends CommonProxy {
 
     private static void init() {
         CraftingUnitModelProvider.initCraftingUnitModels();
+        KeyBind.init();
     }
 
     @SuppressWarnings("all")
