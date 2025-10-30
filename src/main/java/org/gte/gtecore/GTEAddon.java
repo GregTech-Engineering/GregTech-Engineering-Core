@@ -1,10 +1,11 @@
 package org.gte.gtecore;
 
+import org.gte.gtecore.common.registry.GTERegistration;
+import org.gte.gtecore.data.Datagen;
+
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import org.gte.gtecore.common.registry.GTERegistration;
-import org.gte.gtecore.data.Datagen;
 
 @GTAddon
 public class GTEAddon implements IGTAddon {
@@ -26,7 +27,7 @@ public class GTEAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
-	    GTECore.LOGGER.info("GTECore common proxy init!");
+        GTECore.LOGGER.info("GTECore common proxy init!");
         Datagen.init();
     }
 
@@ -37,16 +38,16 @@ public class GTEAddon implements IGTAddon {
 
     @Override
     public void registerElements() {
-	    // GTEElements.init();
+        // GTEElements.init();
     }
 
     @Override
     public void registerCovers() {
         // GTECovers.init();
-	    // GTERegistration.REGISTRATE.creativeModeTab(() -> GTECreativeModeTabs.GTE_BLOCK);
-	    // GTEBlocks.init();
-	    // GTERegistration.REGISTRATE.creativeModeTab(() -> GTECreativeModeTabs.GTE_ITEM);
-	    // GTEItems.init();
+        // GTERegistration.REGISTRATE.creativeModeTab(() -> GTECreativeModeTabs.GTE_BLOCK);
+        // GTEBlocks.init();
+        // GTERegistration.REGISTRATE.creativeModeTab(() -> GTECreativeModeTabs.GTE_ITEM);
+        // GTEItems.init();
     }
 
     @Override

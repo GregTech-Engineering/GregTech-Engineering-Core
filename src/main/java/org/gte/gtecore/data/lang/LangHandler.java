@@ -1,11 +1,14 @@
 package org.gte.gtecore.data.lang;
 
-import com.gregtechceu.gtceu.api.GTValues;
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.minecraftforge.common.data.LanguageProvider;
 import org.gte.gtecore.data.lang.provider.SimplifiedChineseLanguageProvider;
 import org.gte.gtecore.data.lang.provider.TraditionalChineseLanguageProvider;
 import org.gte.gtecore.utils.ChineseConverter;
+
+import com.gregtechceu.gtceu.api.GTValues;
+
+import net.minecraftforge.common.data.LanguageProvider;
+
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 
 import java.util.Arrays;
 import java.util.Map;

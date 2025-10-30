@@ -11,12 +11,12 @@ final class ItemLang {
         for (int i = 0; i < 15; i++) {
             addENCN("tag.item.gtceu.circuits." + GTValues.VN[i].toLowerCase(), GTValues.VN[i] + " Circuit", GTValues.VN[i] + "电路");
         }
-	    
-	    // Tooltips.TOOL_TIPS_MAP.forEach((i, s) -> {
-	    // for (int j = 0; j < s.length(); j++) {
-	    // addENCN("gtecore.tooltip.item." + ItemUtils.getIdLocation(i).getPath() + "." + j, s.ens()[j], s.cns()[j]);
-	    // }
-	    // });
+
+        // Tooltips.TOOL_TIPS_MAP.forEach((i, s) -> {
+        // for (int j = 0; j < s.length(); j++) {
+        // addENCN("gtecore.tooltip.item." + ItemUtils.getIdLocation(i).getPath() + "." + j, s.ens()[j], s.cns()[j]);
+        // }
+        // });
 
         addENCN("gtecore.tooltip.item.really_max_battery", "Filling it up can allow you to complete GregTechCEu Modern", "填满它就能通关GregTechCEu Modern");
         addENCN("gtecore.tooltip.item.transcendent_max_battery", "Filling it up can allow you to complete GregTech Engineering", "填满它就能通关GregTech Engineering");
