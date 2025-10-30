@@ -1,12 +1,10 @@
 package org.gte.gtecore.mixin.mc;
 
-import org.gte.gtecore.api.item.IItem;
-import org.gte.gtecore.utils.RLUtils;
-
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
-
+import org.gte.gtecore.api.item.IItem;
+import org.gte.gtecore.utils.RLUtils;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

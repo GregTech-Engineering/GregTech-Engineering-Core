@@ -1,19 +1,11 @@
 package org.gte.gtecore.data.lang;
 
-import org.gte.gtecore.api.recipe.IdleReason;
-import org.gte.gtecore.client.Tooltips;
+import com.gregtechceu.gtceu.api.GTValues;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.minecraftforge.common.data.LanguageProvider;
 import org.gte.gtecore.data.lang.provider.SimplifiedChineseLanguageProvider;
 import org.gte.gtecore.data.lang.provider.TraditionalChineseLanguageProvider;
 import org.gte.gtecore.utils.ChineseConverter;
-import org.gte.gtecore.utils.register.BlockRegisterUtils;
-import org.gte.gtecore.utils.register.ItemRegisterUtils;
-import org.gte.gtecore.utils.register.MaterialsRegisterUtils;
-
-import com.gregtechceu.gtceu.api.GTValues;
-
-import net.minecraftforge.common.data.LanguageProvider;
-
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -36,19 +28,6 @@ public final class LangHandler {
     }
 
     private static void init() {
-        MaterialsRegisterUtils.LANG.forEach((k, v) -> addENCN("material.gtecore." + k, v));
-        // RecipeTypeRegisterUtils.LANG.forEach((k, v) -> addENCN("gtceu." + k, v));
-        // GTEBedrockFluids.LANG.forEach((k, v) -> addENCN("gtceu.jei.bedrock_fluid." + k, v));
-        ItemRegisterUtils.LANG.forEach((k, v) -> addCN("item.gtecore." + k, v));
-        BlockRegisterUtils.LANG.forEach((k, v) -> addCN("block.gtecore." + k, v));
-        // GTEMachineBuilder.TOOLTIPS_MAP.forEach(LangHandler::addENCN);
-        // MultiblockBuilder.TOOLTIPS_MAP.forEach(LangHandler::addENCN);
-        Tooltips.LANG.forEach(LangHandler::addENCN);
-        for (var reasons : IdleReason.values()) {
-            if (reasons.getEn() == null) continue;
-            addENCN(reasons.getKey(), reasons.getEn(), reasons.getCn());
-        }
-
         addCN("entity.gtecore.task_entity", "任务执行实体");
         addCN("itemGroup.gtecore.block", "GTE | 方块");
         addCN("itemGroup.gtecore.item", "GTE | 物品");

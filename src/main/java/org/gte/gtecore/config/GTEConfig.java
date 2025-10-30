@@ -1,13 +1,11 @@
 package org.gte.gtecore.config;
 
-import org.gte.gtecore.GTECore;
-
 import com.gregtechceu.gtceu.config.ConfigHolder;
-
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
+import org.gte.gtecore.GTECore;
 
 @Config(id = GTECore.MOD_ID)
 public class GTEConfig {
@@ -50,7 +48,7 @@ public class GTEConfig {
     public Difficulty gameDifficulty = Difficulty.Normal;
     @Configurable
     @Configurable.Comment("Prevent cheating")
-    public boolean selfRestraint;
+    public boolean selfRestraint = false;
     @Configurable
     @Configurable.Comment("Enabled, no mining required")
     public boolean enablePrimitiveVoidOre;
@@ -80,8 +78,8 @@ public class GTEConfig {
 
     @Configurable
     @Configurable.Comment("Check for conflicts between recipes")
-    public boolean recipeCheck;
+    public boolean recipeCheck = false;
     @Configurable
     @Configurable.Comment("Dev Mode")
-    public boolean dev;
+    public boolean dev = false;
 }

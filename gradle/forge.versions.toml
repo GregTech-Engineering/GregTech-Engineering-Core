@@ -2,49 +2,47 @@
 ldlib = "1.0.43"
 registrate = "MC1.20-1.3.11"
 configuration = "3.1.0-forge"
-gtm = "7.1.4"
+gtm = "7.2.1"
 mixinExtras = "0.5.0-rc.3"
 
-jei = "15.20.0.112"
+jei = "15.20.0.116"
 emi = "1.1.22+1.20.1"
-ae2 = "15.4.8"
-guideme = "20.1.11"
+ae2 = "15.4.10"
+guideme = "20.1.14"
 architectury = "9.2.14"
-curios = "5.9.1+1.20.1"
+curios = "5.14.1+1.20.1"
 shimmer = "1.20.1-0.2.4"
-modernui = "bFqOmRXG" #3.11.1.6
+modernui = "6ksT8CWg" #3.11.1.6
 
 resourcefullib = "2.1.29"
 resourcefulconfig = "2.1.3"
 botarium = "2.3.4"
 ad_astra = "1.15.20"
 
-patchouli = "1.20.1-84-FORGE"
-botania = "1.20.1-449-FORGE"
+patchouli = "1.20.1-84.1-FORGE"
+botania = "1.20.1-450-FORGE"
 libx = "1.20.1-5.0.14"
 mythicbotany = "1.20.1-4.0.4"
 
 ## ftb mod ##
 ftblibrary = "2001.2.10"
 ftbteams = "2001.3.1"
-ftbultimine = "2001.1.6"
+ftbultimine = "2001.1.7"
 ftbquests = "2001.4.14"
 ftbchunks = "2001.3.6"
 ftbessentials = "2001.2.3"
 ftbxmodcompat = "2.1.3"
 
 ## sophisticated ##
-sophisticated-core = "1.20.1-1.2.80.1073"
-sophisticated-backpacks = "1.20.1-3.23.23.1289"
-sophisticated-storage = "1.20.1-1.3.58.1217"
+sophisticated-core = "1.20.1-1.2.105.1230"
+sophisticated-backpacks = "1.20.1-3.24.10.1404"
+sophisticated-storage = "1.20.1-1.4.14.1356"
 
 ## modrinth maven ##
-jade = "11.6.3"
+jade = "11.13.2+forge"
 cloth-config = "11.1.136+forge"
-ae2wtlib = "15.2.3-forge"
+ae2wtlib = "15.3.1-forge"
 glodium = "1.20-1.5-forge"
-extendedae = "1.20-1.4.2-forge"
-re-avaritia = "1.3.9.0"
 chisel-reborn = "forge-1.20.1-2.0.0"
 cryonicconfig = "forge-1.20.1-1.0.0"
 jer = "1.4.0.247"
@@ -55,10 +53,12 @@ ferritecore = "6.0.1"
 modernfix = "5.24.4+mc1.20.1"
 
 ## curseforge maven ##
+re-avaritia = "7072437"
+extendedae = "7144417"
 
 ## libs ##
 mana = "1.4+1.20.1-forge"
-jech = "4.5.11-dev-shadow"
+jech = "4.5.16"
 gtmt = "1.5.4"
 
 
@@ -84,8 +84,6 @@ shimmer             = { module = "com.lowdragmc.shimmer:Shimmer-forge", version.
 ae2wtlib            = { module = "maven.modrinth:applied-energistics-2-wireless-terminals", version.ref = "ae2wtlib" }
 clothconfig         = { module = "maven.modrinth:cloth-config", version.ref = "cloth-config" }
 glodium             = { module = "maven.modrinth:glodium", version.ref = "glodium" }
-extendedae          = { module = "maven.modrinth:JiOqfoFM", version.ref = "extendedae" }
-reavaritia          = { module = "maven.modrinth:re-avaritia", version.ref = "re-avaritia" }
 chiselreborn        = { module = "maven.modrinth:chisel-reborn", version.ref = "chisel-reborn" }
 cryonicconfig       = { module = "maven.modrinth:cryonicconfig", version.ref = "cryonicconfig" }
 jade                = { module = "maven.modrinth:jade", version.ref = "jade" }
@@ -94,6 +92,9 @@ oculus              = { module = "maven.modrinth:oculus", version.ref = "oculus"
 ferritecore         = { module = "maven.modrinth:uXXizFIs", version.ref = "ferritecore" }
 modernfix           = { module = "maven.modrinth:modernfix", version.ref = "modernfix" }
 modernui            = { module = "maven.modrinth:modern-ui", version.ref = "modernui" }
+
+reavaritia = { module = "curse.maven:re-avaritia-623969", version.ref = "re-avaritia" }
+extendedae = { module = "curse.maven:ex-pattern-provider-892005", version.ref = "extendedae" }
 
 resourcefullib      = { module = "com.teamresourceful.resourcefullib:resourcefullib-forge-1.20.1", version.ref = "resourcefullib"}
 resourcefulconfig   = { module = "com.teamresourceful.resourcefulconfig:resourcefulconfig-forge-1.20.1", version.ref = "resourcefulconfig"}
