@@ -1,7 +1,7 @@
 #Organize Import Order
 #Sat May 27 02:13:47 CDT 2023
-1=org.gtelib
-1=org.gtecore
+1=com.gtelib
+1=com.gtecore
 1=com.gregtechceu
 1=com.lowdragmc
 1=net

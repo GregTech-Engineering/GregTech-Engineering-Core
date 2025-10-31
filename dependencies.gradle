@@ -1,7 +1,13 @@
 dependencies {
     compileOnly(libs.jetbrains.annotations)
 
+    // GTE Lib
     jarJar(modApi(forge.gtelib.get()))
+
+    // Configuration
+    jarJar(modApi(forge.configuration.get())).version {
+        require("[${forge.versions.configuration.get()},)")
+    }
 
     jarJar(modLocalRuntime(forge.manapeeper.get()))
     modClientLocalRuntime(forge.jecharacters.get())
@@ -15,9 +21,6 @@ dependencies {
 
     // Registrate
     modCompileOnly(forge.registrate)
-
-    // Configuration
-    modCompileOnly(forge.configuration)
 
     // GregTech
     modCompileOnly(forge.gtm)
