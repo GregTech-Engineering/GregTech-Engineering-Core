@@ -31,6 +31,10 @@ repositories {
         name = 'IzzelAliz Maven'
         url = 'https://maven.izzel.io/releases/'
     }
+    maven { // Re-Avaritia
+        name = 'nova-committee Maven'
+        url = "https://maven.nova-committee.cn/s3"
+    }
     maven {
         url = "https://maven.gtceu.com"
         content {

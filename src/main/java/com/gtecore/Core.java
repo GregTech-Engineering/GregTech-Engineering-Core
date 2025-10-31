@@ -11,6 +11,6 @@ import com.gtelib.GTECore;
 public class Core {
 
     public Core() {
-        DistExecutor.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);;
+        DistExecutor.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
     }
 }
