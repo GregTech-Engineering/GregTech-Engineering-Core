@@ -1,11 +1,11 @@
 package org.gte.gtecore.gametest.example;
 
-import com.gtelib.GTECore;
-
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
+
+import com.gtelib.GTECore;
 
 @PrefixGameTestTemplate(false)
 @GameTestHolder(GTECore.Core_ID)

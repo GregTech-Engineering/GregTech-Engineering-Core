@@ -4,14 +4,13 @@ import net.minecraft.gametest.framework.BeforeBatch;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
-import org.gte.gtecore.GTECore;
+
+import com.gtelib.GTECore;
 
 @PrefixGameTestTemplate(false)
-@GameTestHolder(GTECore.MOD_ID)
+@GameTestHolder(GTECore.Core_ID)
 public class GTERecipeLookupTest {
 
     @BeforeBatch(batch = "GTERecipeLookup")
-    public static void prepare(ServerLevel level) {
-
-    }
+    public static void prepare(ServerLevel level) {}
 }
