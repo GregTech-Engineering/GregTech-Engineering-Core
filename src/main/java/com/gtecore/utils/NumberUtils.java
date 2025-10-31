@@ -1,8 +1,10 @@
 package com.gtecore.utils;
 
 import com.gregtechceu.gtceu.api.GTValues;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.text.DecimalFormat;
