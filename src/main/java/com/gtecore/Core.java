@@ -1,11 +1,12 @@
 package com.gtecore;
 
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.common.Mod;
+import com.gtelib.GTECore;
 
 import com.gtecore.client.ClientProxy;
 import com.gtecore.common.CommonProxy;
-import com.gtelib.GTECore;
+
+import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.common.Mod;
 
 @Mod(GTECore.Core_ID)
 public class Core {

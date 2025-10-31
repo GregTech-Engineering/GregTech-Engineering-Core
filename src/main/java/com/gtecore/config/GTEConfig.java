@@ -1,26 +1,21 @@
 package com.gtecore.config;
 
+import com.gtelib.GTECore;
+
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
-import com.gtelib.GTECore;
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
-@Config(id = GTECore.Core_ID)
+@Config(id = GTECore.Config_ID, group = GTECore.Core_ID)
 public class GTEConfig {
 
     public static GTEConfig INSTANCE;
     private static final Object LOCK = new Object();
 
     private static int difficulty = 0;
-
-    public enum Difficulty {
-        Simple,
-        Normal,
-        Expert
-    }
 
     public static int getDifficulty() {
         if (difficulty == 0) {
@@ -34,6 +29,7 @@ public class GTEConfig {
             if (INSTANCE == null) {
                 INSTANCE = Configuration.registerConfig(GTEConfig.class, ConfigFormats.YAML).getConfigInstance();
             }
+
             ConfigHolder.init();
 
             int difficulty = getDifficulty();
