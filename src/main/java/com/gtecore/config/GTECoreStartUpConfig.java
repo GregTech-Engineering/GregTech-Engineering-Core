@@ -7,7 +7,7 @@ import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
-@Config(id = GTECore.StartUpConfig_Name, group = GTECore.Core_ID)
+@Config(id = GTECore.StartUpConfig_ID, group = GTECore.Core_ID)
 public class GTECoreStartUpConfig {
 
     public static GTECoreStartUpConfig INSTANCE;
