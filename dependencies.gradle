@@ -16,6 +16,9 @@ dependencies {
     annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
     api(annotationProcessor(forge.mixinExtras.common.get()))
 
+    // Kotlin for Forge
+    modApi(forge.kotlinforforge)
+
     // LDLib
     modCompileOnly(forge.ldlib)
 

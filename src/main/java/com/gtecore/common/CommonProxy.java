@@ -22,8 +22,8 @@ public class CommonProxy {
         GTECoreStartUpConfig.init();
         GTEConfig.init();
         if (GTCEu.isDev() || GTCEu.isDataGen()) {
-            GTEConfig.INSTANCE.dev = true;
             GTECoreStartUpConfig.INSTANCE.dev = true;
+            GTEConfig.INSTANCE.dev = true;
             GTEConfig.INSTANCE.enablePrimitiveVoidOre = true;
         }
     }
