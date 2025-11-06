@@ -17,7 +17,7 @@ dependencies {
     api(annotationProcessor(forge.mixinExtras.common.get()))
 
     // Kotlin for Forge
-    modApi(forge.kotlinforforge)
+    modCompileOnly(forge.kotlinforforge)
 
     // LDLib
     modCompileOnly(forge.ldlib)
