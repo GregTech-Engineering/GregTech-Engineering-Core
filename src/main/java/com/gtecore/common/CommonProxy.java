@@ -18,7 +18,7 @@ public class CommonProxy {
     }
 
     private static void init() {
-        GTECore.LOGGER.info("GTECore common proxy init!");
+        GTECore.CoreLOGGER.info("GTECore common proxy init!");
         GTECoreStartUpConfig.init();
         GTEConfig.init();
         if (GTCEu.isDev() || GTCEu.isDataGen()) {
