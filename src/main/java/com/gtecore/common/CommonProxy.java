@@ -1,6 +1,7 @@
 package com.gtecore.common;
 
 import com.gtelib.GTECore;
+import com.gtelib.api.registries.ScanningClass;
 
 import com.gtecore.config.GTEConfig;
 import com.gtecore.config.GTECoreStartUpConfig;
@@ -8,7 +9,6 @@ import com.gtecore.data.Datagen;
 
 import com.gregtechceu.gtceu.GTCEu;
 
-import com.gtelib.api.registries.ScanningClass;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLConstructModEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,7 +23,7 @@ public class CommonProxy {
 
     private static void init() {
         GTECore.CoreLOGGER.info("GTECore common proxy init!");
-	    ScanningClass.init();
+        ScanningClass.init();
         GTECoreStartUpConfig.init();
         GTEConfig.init();
         if (GTCEu.isDev() || GTCEu.isDataGen()) {
