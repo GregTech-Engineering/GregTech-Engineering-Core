@@ -23,6 +23,10 @@ on:
         required: false
         type: string
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build:
     name: Build and Publish to Maven
@@ -41,11 +45,11 @@ jobs:
         uses: ./.github/actions/build_setup
         with:
           ref: ${{ inputs.branch }}
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Get Version
         id: ver
         run: echo "version=$(./gradlew -q printVersion)" >> $GITHUB_OUTPUT
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
       - name: Build
         run: ./gradlew assemble
       - name: Upload Build Artifacts
