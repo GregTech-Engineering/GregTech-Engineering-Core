@@ -1,6 +1,8 @@
 package com.gtecore.config;
 
 import com.gtelib.GTECore;
+import com.gtelib.api.annotation.DataGeneratorScanned;
+import com.gtelib.api.annotation.language.RegisterLanguage;
 
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
@@ -9,6 +11,7 @@ import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
+@DataGeneratorScanned
 @Config(id = GTECore.Config_ID, group = GTECore.Core_ID)
 public class GTEConfig {
 
@@ -42,6 +45,7 @@ public class GTEConfig {
 
     @Configurable
     @Configurable.Comment({ "Optional: Simple, Normal, Expert" })
+    @RegisterLanguage(namePrefix = "config.gtecore.option", en = "Game Difficulty", cn = "游戏难度")
     public Difficulty gameDifficulty = Difficulty.Normal;
     @Configurable
     @Configurable.Comment("Prevent cheating")
