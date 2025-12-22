@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.DecimalFormat;
 
-public final class NumberUtils {
+public class NumberUtils {
 
     private NumberUtils() {}
 
