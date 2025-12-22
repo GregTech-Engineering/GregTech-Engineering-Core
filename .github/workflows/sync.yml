@@ -2,7 +2,7 @@ name: Sync Github Folder
 
 on:
   push:
-    branches: ['main']
+    branches: ['1.20.1']
     paths: ['.github/**']
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git switch -C gh/workflow-sync
           git fetch origin
-          git checkout origin/main -- .github
+          git checkout origin/1.20.1 -- .github
           git add .github
           git commit --allow-empty -m "Sync Workflows"
           git push --force --set-upstream origin gh/workflow-sync
